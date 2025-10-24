@@ -1,0 +1,47 @@
+---
+const steps = [
+  {
+    title: "Diagnóstico Inicial",
+    description:
+      "Entendemos tu visión, tus desafíos y tus objetivos. Articulamos tu porqué, tu voz y el arquetipo de tu cliente ideal.",
+  },
+  {
+    title: "Arquitectura de Contenidos",
+    description:
+      "Desarrollamos los pilares, temas y formatos que resonarán con tu audiencia.",
+  },
+  {
+    title: "Estrategia Multicanal",
+    description:
+      "Adaptamos tu mensaje para LinkedIn, Instagram, TikTok y tu blog, maximizando tu alcance.",
+  },
+  {
+    title: "Plan de Acción y Medición",
+    description:
+      "Te entregamos una hoja de ruta clara y métricas para seguir tu evolución.",
+  },
+];
+---
+
+<div class="stages flex flex-col md:flex-row gap-20">
+  {
+    steps.map((step) => (
+      <div class="stage flex flex-col h-60 w-52 px-2 ">
+        <div class="heading h-16 overflow-hidden">
+          <div class="headings">
+            <span class="text-black text-2xl block leading-tight">
+              {step.title}
+            </span>
+            <span class="text-sky-500 text-2xl">{step.title}</span>
+          </div>
+        </div>
+        <p class="text-black mt-4 opacity-0">{step.description}</p>
+      </div>
+    ))
+  }
+</div>
+
+<script>
+  import { gsapCardAnimation } from "../scripts/gsapCardAnimation.js";
+  gsapCardAnimation();
+</script>

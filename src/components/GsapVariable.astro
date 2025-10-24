@@ -1,9 +1,30 @@
 ---
-
+const steps = [
+  {
+    title: "Diagnóstico Inicial",
+    description:
+      "Entendemos tu visión, tus desafíos y tus objetivos. Articulamos tu porqué, tu voz y el arquetipo de tu cliente ideal.",
+  },
+  {
+    title: "Arquitectura de Contenidos",
+    description:
+      "Desarrollamos los pilares, temas y formatos que resonarán con tu audiencia.",
+  },
+  {
+    title: "Estrategia Multicanal",
+    description:
+      "Adaptamos tu mensaje para LinkedIn, Instagram, TikTok y tu blog, maximizando tu alcance.",
+  },
+  {
+    title: "Plan de Acción y Medición",
+    description:
+      "Te entregamos una hoja de ruta clara y métricas para seguir tu evolución.",
+  },
+];
 ---
 
 <div class="w-full mx-auto min-h-screen max-w-6xl">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="85.641 0 829.233 600">
     <path
       id="full-path"
       style="fill: none; stroke-width: 25px; stroke-linecap: round; stroke-linejoin: round; stroke: oklch(0.31 0 0);"
@@ -14,34 +35,50 @@
       style="fill: none; stroke-width: 25px; stroke-linecap: round; stroke-linejoin: round; stroke: oklch(0.8987 0.119 87.54);"
       d="M 100.417 500.23 C 100.417 500.23 116.57 370.162 200 347.558 C 292.976 322.368 569.933 373.473 800 200 C 874.93 143.502 902.725 97.786 900 100"
     ></path>
-
-    <g>
+    <g id="buttons">
       <rect
-        x="100"
-        y="500"
-        width="200"
+        x="87.648"
+        y="520.587"
+        width="212.352"
         height="70"
-        style="fill: oklch(0.9 0.12 87.5);"></rect>
+        style="fill: oklch(0.9 0.12 87.5); stroke-width: 1;"></rect>
       <rect
         x="300"
-        y="500"
+        y="520.587"
         width="200"
         height="70"
         style="stroke-width: 1; fill: rgb(165, 184, 159);"></rect>
       <rect
         x="500"
-        y="500"
+        y="520.587"
         width="200"
         height="70"
         style="stroke-width: 1; fill: rgb(94, 57, 64);"></rect>
       <rect
         x="700"
-        y="500"
-        width="200"
+        y="520.587"
+        width="211.529"
         height="70"
         style="stroke-width: 1; fill: rgb(245, 243, 238);"></rect>
     </g>
   </svg>
+</div>
+<div class="stages flex flex-col md:flex-row gap-20">
+  {
+    steps.map((step) => (
+      <div class="stage flex flex-col h-60 w-52 px-2">
+        <div class="heading h-16 overflow-hidden">
+          <div class="headings">
+            <span class="text-black text-2xl block leading-tight">
+              {step.title}
+            </span>
+            <span class="text-sky-500 text-2xl">{step.title}</span>
+          </div>
+        </div>
+        <p class="text-black mt-4 opacity-0">{step.description}</p>
+      </div>
+    ))
+  }
 </div>
 
 <script>
