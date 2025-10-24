@@ -1,0 +1,21 @@
+---
+
+---
+
+<div
+  class="relative flex items-center justify-center h-[250px] w-[250px] rounded-full bg-blue-800 border-3 border-black cursor-pointer button"
+>
+  <div
+    class="absolute inset-0 bg-blue-300/30 rounded-full will-change-transform button-bg"
+  >
+  </div>
+  <span class="relative z-10 text-white text-4xl font-bold">Hover</span>
+</div>
+
+<script>
+  import { gsapGlitch } from "../scripts/gsapGlitch";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    gsapGlitch();
+  });
+</script>
