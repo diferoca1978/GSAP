@@ -12,7 +12,7 @@ export const gsapVariableAnimation = () => {
   const tl = gsap.timeline()
 
   // To set the initial behavior of the full path and highlight path as a horizontal line
-  .from("#full-path, #highlight-path", {attr:{
+  .to("#full-path, #highlight-path", {attr:{
     d:"M 100.417 500.23 C 100.417 500.23 200 500 300 500 C 396.328 500 549.863 500 800 500 C 900 500 902.725 497.786 900 500"
   }})
 
@@ -21,7 +21,7 @@ export const gsapVariableAnimation = () => {
   .to ("#highlight-path", {drawSVG:"32% 50%", duration:1.5}, "+=0.5")
   
   // To generate the movement of the highlight path along the full path based on the mouse hover of the buttons
-  const positions = ["0% 30%", "32% 50%", "52% 72%", "74% 100%"];
+  const positions = ["0% 25%", "32% 50%", "52% 72%", "74% 100%"];
   const buttons = gsap.utils.toArray("#buttons rect");
 
   buttons.forEach((btn, i) => {

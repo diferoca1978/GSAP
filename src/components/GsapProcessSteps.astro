@@ -1,0 +1,92 @@
+---
+const steps = [
+  {
+    title: "Diagnóstico Inicial",
+    description:
+      "Entendemos tu visión, tus desafíos y tus objetivos. Articulamos tu porqué, tu voz y el arquetipo de tu cliente ideal.",
+  },
+  {
+    title: "Arquitectura de Contenidos",
+    description:
+      "Desarrollamos los pilares, temas y formatos que resonarán con tu audiencia.",
+  },
+  {
+    title: "Estrategia Multicanal",
+    description:
+      "Adaptamos tu mensaje para LinkedIn, Instagram, TikTok y tu blog, maximizando tu alcance.",
+  },
+  {
+    title: "Plan de Acción y Medición",
+    description:
+      "Te entregamos una hoja de ruta clara y métricas para seguir tu evolución.",
+  },
+];
+---
+
+<section class="gsap-process-steps w-full max-w-6xl mx-auto">
+  <div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200">
+      <path
+        id="path-full"
+        style="stroke: oklch(0.761 0.0408 138.18); stroke-width: 25; stroke-linecap: round; fill: none;"
+        d="M 100 100 L 100 100"></path>
+      <path
+        id="path-highlight"
+        style="stroke: oklch(0.8987 0.119 87.54); stroke-width: 25; stroke-linecap: round; fill: none;"
+        d="M 100 100 L 100 100"></path>
+    </svg>
+    <g id="button">
+      <rect
+        x="100"
+        y="131.204"
+        width="250"
+        height="30"
+        style="stroke: rgb(0, 0, 0); fill: none;"></rect>
+      <rect
+        x="350"
+        y="131.204"
+        width="250"
+        height="30"
+        style="stroke: rgb(0, 0, 0); fill: none"></rect>
+      <rect
+        x="600"
+        y="131.204"
+        width="250"
+        height="30"
+        style="stroke: rgb(0, 0, 0); fill: none"></rect>
+      <rect
+        x="850"
+        y="131.204"
+        width="250"
+        height="30"
+        style="stroke: rgb(0, 0, 0); fill: none"></rect>
+    </g>
+  </div>
+  <div
+    class="stages flex flex-col md:flex-row gap-8 justify-center items-center"
+  >
+    {
+      steps.map((step) => (
+        <div class="stage flex flex-col h-60 w-52 px-2">
+          <div class="heading h-16 overflow-hidden">
+            <div class="headings">
+              <span class="text-black text-2xl block leading-tight">
+                {step.title}
+              </span>
+              <span class="text-sky-500 text-2xl">{step.title}</span>
+            </div>
+          </div>
+          <p class="text-black mt-4 opacity-0">{step.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  import { gsapProcessStepsAnimation } from "../scripts/gsapProcessStepsAnimation";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    gsapProcessStepsAnimation();
+  });
+</script>
