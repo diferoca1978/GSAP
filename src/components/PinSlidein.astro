@@ -1,0 +1,42 @@
+---
+
+---
+
+<div
+  class="description flex items-center justify-center min-h-screen w-full bg-sky-500 p-10"
+>
+  <h1 class="text-4xl font-bold">Split Screen Pinning</h1>
+  <p class="mt-4 text-lg">
+    This component demonstrates a split-screen pinning effect using GSAP and
+    ScrollTrigger. As you scroll, the panels will pin and unpin, creating a
+    dynamic and engaging visual experience.
+  </p>
+</div>
+
+<div
+  id="panel-container"
+  class="relative mx-auto min-h-screen w-full overflow-hidden"
+>
+  <section
+    class="panel green absolute inset-0 flex items-center justify-center bg-green-500"
+  >
+  </section>
+  <section
+    class="panel orange absolute inset-0 flex items-center justify-center bg-orange-500"
+  >
+  </section>
+  <section
+    class="panel purple absolute inset-0 flex items-center justify-center bg-purple-500"
+  >
+  </section>
+  <section
+    class="panel blue absolute inset-0 flex items-center justify-center bg-blue-500"
+  >
+  </section>
+</div>
+
+<script>
+  import { pinSlideInAnimation } from "@/scripts/gsapPinSlideInAnimation.js";
+
+  pinSlideInAnimation();
+</script>
