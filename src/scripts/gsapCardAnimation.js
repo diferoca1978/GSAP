@@ -21,9 +21,5 @@ export const gsapCardAnimation = () => {
     stage.addEventListener("mouseleave", () => {
       tl.reverse();
     });
-  })
-
-  
-
-  
+  })  
 };
