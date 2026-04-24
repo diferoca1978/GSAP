@@ -1,0 +1,175 @@
+---
+const projects = [
+  {
+    number: "01",
+    title: "Brand Identity & Web Presence",
+    category: "Branding",
+    year: "2024",
+    bgClass: "bg-linear-to-br from-violet-900 to-indigo-950",
+  },
+  {
+    number: "02",
+    title: "E-Commerce Platform Redesign",
+    category: "UX Design · Development",
+    year: "2024",
+    bgClass: "bg-linear-to-br from-emerald-900 to-teal-950",
+  },
+  {
+    number: "03",
+    title: "Digital Campaign — Summer Collection",
+    category: "Creative Direction",
+    year: "2023",
+    bgClass: "bg-linear-to-br from-amber-800 to-orange-950",
+  },
+  {
+    number: "04",
+    title: "Corporate Communications Suite",
+    category: "Strategy · Design",
+    year: "2023",
+    bgClass: "bg-linear-to-br from-rose-900 to-pink-950",
+  },
+  {
+    number: "05",
+    title: "Interactive Annual Report",
+    category: "Digital Experience",
+    year: "2022",
+    bgClass: "bg-linear-to-br from-sky-900 to-blue-950",
+  },
+];
+---
+
+<section
+  data-cursor-section
+  class="relative w-full bg-neutral-950 select-none"
+>
+  <div class="mx-auto max-w-6xl px-6 lg:px-12">
+    <div class="flex gap-16 lg:gap-24">
+
+      <!-- Left column: isolated image preview panel -->
+      <div class="hidden lg:flex lg:w-2/5 shrink-0">
+        <div class="sticky top-0 h-screen w-full flex flex-col justify-center py-24">
+
+          <!-- Image stack — GSAP crossfades between them -->
+          <div
+            data-preview-panel
+            class="relative w-full overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10"
+            style="aspect-ratio: 3/4;"
+          >
+            {
+              projects.map((project, i) => (
+                <div
+                  data-preview-img
+                  data-index={i}
+                  class={`absolute inset-0 h-full w-full ${project.bgClass} flex flex-col justify-end`}
+                >
+                  <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
+                  <div class="relative z-10 p-7 space-y-1">
+                    <p class="text-white/40 text-xs font-mono uppercase tracking-widest">
+                      {project.category}
+                    </p>
+                    <p class="text-white text-lg font-semibold leading-snug">
+                      {project.title}
+                    </p>
+                    <p class="text-white/40 text-xs font-mono">{project.year}</p>
+                  </div>
+                </div>
+              ))
+            }
+
+            <!-- Default idle state shown before any hover -->
+            <div
+              data-preview-idle
+              class="absolute inset-0 h-full w-full bg-neutral-900 flex items-center justify-center"
+            >
+              <p class="text-neutral-700 text-xs font-mono uppercase tracking-widest">
+                Hover a project
+              </p>
+            </div>
+          </div>
+
+          <!-- Project counter below the image -->
+          <div class="mt-6 flex items-center justify-between">
+            <span data-preview-counter class="text-neutral-600 text-xs font-mono">
+              — / {projects.length}
+            </span>
+            <span class="text-neutral-700 text-xs font-mono uppercase tracking-widest">
+              Selected Work
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: project list -->
+      <div class="flex-1 min-w-0 py-24">
+
+        <!-- Header -->
+        <div class="mb-14">
+          <p class="mb-3 text-xs font-mono uppercase tracking-[0.3em] text-neutral-500">
+            Portfolio
+          </p>
+          <h2 class="text-5xl font-bold tracking-tight text-white lg:text-6xl">
+            Selected<br />Projects
+          </h2>
+        </div>
+
+        <!-- Divider -->
+        <div class="h-px bg-neutral-800"></div>
+
+        <!-- Project rows -->
+        <ul>
+          {
+            projects.map((project, i) => (
+              <li
+                data-project-item
+                data-index={i}
+                class="border-b border-neutral-800 cursor-pointer"
+              >
+                <div class="flex items-center gap-6 py-8">
+                  <!-- Number -->
+                  <span
+                    data-project-number
+                    class="w-10 shrink-0 font-mono text-xs text-neutral-700"
+                  >
+                    {project.number}
+                  </span>
+
+                  <!-- Title + category -->
+                  <div class="flex-1 min-w-0">
+                    <h3
+                      data-project-title
+                      class="text-xl font-semibold text-white truncate lg:text-2xl"
+                    >
+                      {project.title}
+                    </h3>
+                    <p class="mt-0.5 text-xs text-neutral-500 font-mono uppercase tracking-widest">
+                      {project.category}
+                    </p>
+                  </div>
+
+                  <!-- Year (desktop only) -->
+                  <span class="hidden shrink-0 font-mono text-sm text-neutral-600 lg:block">
+                    {project.year}
+                  </span>
+
+                  <!-- Arrow -->
+                  <span
+                    data-project-arrow
+                    class="shrink-0 text-lg text-neutral-600"
+                  >
+                    ↗
+                  </span>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  import { cursorTrackingImgPreview } from "@/scripts/cursorTrackingImgPreview";
+  cursorTrackingImgPreview();
+</script>
